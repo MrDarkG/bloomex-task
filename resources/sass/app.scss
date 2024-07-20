@@ -1,0 +1,31 @@
+// Fonts
+@import url('https://fonts.bunny.net/css?family=Nunito');
+
+// Variables
+@import 'variables';
+
+// Bootstrap
+@import 'bootstrap/scss/bootstrap';
+
+
+.cursor-pointer {
+    cursor: pointer;
+}
+
+.badge {
+    background-color: #545454;
+}
+.bg-low {
+    background-color: #0753a1 !important;
+}
+
+.bg-medium{
+    background-color: #c27005 !important;
+}
+
+.bg-high {
+    background-color: #a20303 !important;
+}
+.min-w-250 {
+    min-width: 250px;
+}
