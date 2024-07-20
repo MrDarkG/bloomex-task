@@ -48,5 +48,5 @@ password: password
 To run the tests, you need to run the following command:
 
 ```bash
-$ docker-compose exec bloomex.web php artisan test
+$ docker-compose exec bloomex.web php artisan test --filter=unit
 ```
