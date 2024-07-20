@@ -36,35 +36,39 @@
                     </select>
                 </div>
             </div>
-        </div>
-        <div class="d-flex overflow-auto">
-            <div class="card p-1 col-md-3 col-4 col-lg-2 m-4 min-w-250" v-for="(list,index) in lists">
-                {{ index }}
-                <div>
-                    <VueDraggable
-                        class="flex flex-col gap-2 p-4 w-300px h-300px m-auto bg-gray-500/5 rounded overflow-auto"
-                        v-model="lists[index]"
-                        animation="150"
-                        ghostClass="ghost"
-                        group="people"
-                        @update="onUpdate"
-                        @add="onAdd($event, index)"
-                        @remove="remove"
-                    >
-                        <div
-                            v-for="item in lists[index]"
-                            :key="item.id"
-                            class="cursor-move h-30 bg-gray-500/5 rounded p-0 p-md-3 card cursor-pointer my-2"
-                        >
-                            <div class="d-flex flex-wrap justify-content-between">
-                                {{ item.subject }}
-                                <span :class="`badge rounded-pill bg-${item.priority.toLowerCase()}`">{{ item.priority }}</span>
-                            </div>
+            <div class="row flex-nowrap justify-content-between  overflow-auto">
+                <div class="col-md-3 col-4 col-lg-3 mt-4 min-w-250" v-for="(list,index) in lists">
+                    <div class="card p-1 w-100" >
+                        {{ index }}
+                        <div>
+                            <VueDraggable
+                                class="flex flex-col gap-2 p-4 w-300px h-300px m-auto bg-gray-500/5 rounded overflow-auto"
+                                v-model="lists[index]"
+                                animation="150"
+                                ghostClass="ghost"
+                                group="people"
+                                @update="onUpdate"
+                                @add="onAdd($event, index)"
+                                @remove="remove"
+                            >
+                                <div
+                                    v-for="item in lists[index]"
+                                    :key="item.id"
+                                    class="cursor-move h-30 bg-gray-500/5 rounded p-0 p-md-3 card cursor-pointer my-2"
+                                >
+                                    <div class="d-flex flex-wrap justify-content-between">
+                                        {{ item.subject }}
+                                        <span :class="`badge rounded-pill bg-${item.priority.toLowerCase()}`">{{ item.priority }}</span>
+                                    </div>
+                                </div>
+                            </VueDraggable>
                         </div>
-                    </VueDraggable>
+                    </div>
                 </div>
+
             </div>
         </div>
+
     </div>
 </template>
 <script>
